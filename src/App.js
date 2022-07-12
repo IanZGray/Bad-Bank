@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import AllData from './components/allData/AllData';
+// import AllData from './components/alldata/AllData'
 import CreateAccount from './components/createAccount/CreateAccount';
 import Deposit from './components/deposit/Deposit';
 import Home from './components/home/Home';
-import Navigation from './components/nav/navigation';
+import Navigation from './components/navigation/Navigation';
 import Withdraw from './components/withdraw/Withdraw';
 
 function App() {
