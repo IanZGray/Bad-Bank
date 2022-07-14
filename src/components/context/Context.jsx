@@ -1,7 +1,6 @@
-const Route       = ReactRouterDOM.Route;
-const Link        = ReactRouterDOM.Link;
-const HashRouter  = ReactRouterDOM.HashRouter;
-const UserContext = React.createContext(null);
+import { createContext, useState } from "react";
+
+const DBContext = createContext({});
 
 function Card(props){
     function classes(){
@@ -22,3 +21,16 @@ function Card(props){
       </div>      
     );    
   }
+
+
+  // context needed is list of profiles. useState to update the list of profiles
+    // context needed is the login status. 
+
+  const [profiles, setProfiles] = useState(
+    [
+      {
+        email:"Person", password:"123456", balance:100.00
+      },
+    ]
+  );
+

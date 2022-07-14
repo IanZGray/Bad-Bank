@@ -6,14 +6,13 @@ import React from "react";
 import './navigation.css'
 
 
-const Navigation = (context) => {
-
+const Nav = () => {
 
     return (
-        <div>
-            <h1>Navigagion</h1>
-        </div>
+        <nav>
+            <h1>Nav</h1>
+        </nav>
     )
 }
 
-export default Navigation;
+export default Nav;

@@ -1,17 +1,31 @@
-import './App.css';
+import Nav from './components/navigation/Navigation';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
 
+import Login from './components/login/Login';
 import CreateAccount from './components/createAccount/CreateAccount';
 import Deposit from './components/deposit/Deposit';
 import Home from './components/home/Home';
-import Navigation from './components/navigation/Navigation';
 import Withdraw from './components/withdraw/Withdraw';
 import Data from './components/data/Data';
+import Missing from './components/missing/Missing';
+
+import { Route, Switch, useHistory } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function App() {
   return (
-    <><div>
-      <h1>hello</h1>
-    <Withdraw></Withdraw> <Navigation></Navigation> <Home></Home> <Deposit></Deposit> <CreateAccount></CreateAccount> <Data></Data>
+    <><div className="App">
+      <Header />
+      <Nav />
+      <Home />
+      <Login />
+      <CreateAccount />
+      <Deposit />
+      <Withdraw />
+      <Data />
+      <Missing />
+      <Footer />
     </div>
     </>
   );

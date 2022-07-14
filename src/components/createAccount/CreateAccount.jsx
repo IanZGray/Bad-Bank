@@ -1,14 +1,12 @@
 import React from "react";
 import './createAccount.css'
 
-
-const CreateAccount = (context) => {
-
+const CreateAccount = () => {
 
     return (
-        <div>
+        <main>
             <h1>Create Account</h1>
-        </div>
+        </main>
     )
 }
 

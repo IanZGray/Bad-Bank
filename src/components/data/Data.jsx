@@ -1,15 +1,13 @@
 import React from "react";
 import './data.css'
 
-
-const Data = (context) => {
+const Data = () => {
 
     return (
-        <div>
+        <main>
             <h1>Data</h1>
-        </div>
+        </main>
     )
-
 }
 
 export default Data;

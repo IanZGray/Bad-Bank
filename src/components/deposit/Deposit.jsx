@@ -1,16 +1,13 @@
 import React from "react";
 import './deposit.css'
 
-
-const Deposit = (context) => {
-
+const Deposit = () => {
 
     return (
-        <div>
+        <main>
             <h1>Deposit</h1>
-        </div>
+        </main>
     )
-
 }
 
 export default Deposit;

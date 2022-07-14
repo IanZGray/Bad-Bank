@@ -1,14 +1,12 @@
 import React from "react";
 import './withdraw.css'
 
-
-const Withdraw = (context) => {
-
+const Withdraw = () => {
 
     return (
-        <div>
+        <main>
             <h1>Withdraw</h1>
-        </div>
+        </main>
     )
 }
 export default Withdraw;

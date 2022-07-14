@@ -1,15 +1,16 @@
 import React from "react";
-import './home.css'
+import './home.css';
+// import { Card } from "react-bootstrap";
+import image from "../images/bank.png";
 
 
-const Home = (context) => {
-    
-    
+const Home = () => {
     
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+       <main>
+        <h1>Home</h1>
+        {/* <img src={ image } /> */}
+       </main>
     )
 }
 
