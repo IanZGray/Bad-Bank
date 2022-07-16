@@ -24,9 +24,9 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route exact path='/' element={<App/>} >
-      <Route path="/home" element ={<Home/>} />
+      <Route path="home" element ={<Home/>} />
       <Route path="login" element={<Login/>} />
-      <Route path="/createAccount" element ={<CreateAccount/>} />
+      <Route path="createAccount" element ={<CreateAccount/>} />
       <Route path="deposit" element ={<Deposit/>} />
       <Route path="withdraw" element ={<Withdraw/>} />
       <Route path="data" element ={<Data/>} />
