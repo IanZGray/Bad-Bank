@@ -1,33 +1,30 @@
-import Nav from './components/navigation/Navigation';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
+import NavigationBar from './NavigationBar';
+import Footer from './Footer';
+import Header from './Header';
+import UserContext from './userContext';
 
-import Login from './components/login/Login';
-import CreateAccount from './components/createAccount/CreateAccount';
-import Deposit from './components/deposit/Deposit';
-import Home from './components/home/Home';
-import Withdraw from './components/withdraw/Withdraw';
-import Data from './components/data/Data';
-import Missing from './components/missing/Missing';
+import Login from './Login';
+import CreateAccount from './CreateAccount';
+import Deposit from './Deposit';
+import Home from './Home';
+import Withdraw from './Withdraw';
+import Data from './Data';
+import Missing from './Missing';
 
-import { Route, Switch, useHistory } from 'react-router-dom';
+import './app.css'
+
+// import { Route, Switch, useHistory, HashRouter } from 'react-router-dom';
+import { Outlet, Link, } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 
 function App() {
   return (
-    <><div className="App">
-      <Header />
-      <Nav />
-      <Home />
-      <Login />
-      <CreateAccount />
-      <Deposit />
-      <Withdraw />
-      <Data />
-      <Missing />
-      <Footer />
+    <div className="App">
+      <NavigationBar>
+      </NavigationBar>
+      <Outlet />
     </div>
-    </>
   );
 }
 
