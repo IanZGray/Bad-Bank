@@ -18,6 +18,7 @@ import { Outlet, Link, } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +26,7 @@ function App() {
       </NavigationBar>
       <Outlet />
     </div>
+
   );
 }
 

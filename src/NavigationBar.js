@@ -32,7 +32,6 @@ function NavigationBar() {
           <ul className="navbar-nav">
           <li className="nav-item">
               <a className="nav-link hovertext" data-hover="Home page link" href="home">Home</a>
-              
             </li>
             <li className="nav-item">
               <a className="nav-link hovertext" data-hover="Create your account here" href="createAccount">Create Account</a>
