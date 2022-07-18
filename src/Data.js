@@ -13,11 +13,18 @@ const Data = () => {
         }}
       >
         {users.map((data) => (
-          <div className='dataDisplay'>
-            <h1 classNam="dataSection">{data.name}</h1>
-            <h2 classNam="dataSection">{data.password}</h2>
-            <h3 classNam="dataSection">${data.balance}</h3>
+          <div className='list-group list-group-flush'>
+            <h1 classNam="list-group-item">{data.name}</h1>
+            <h2 classNam="list-group-item">{data.password}</h2>
+            <h3 classNam="list-group-item">${data.balance}</h3>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{data.name}</li>
+              <li class="list-group-item">{data.password}</li>
+              <li class="list-group-item">${data.balance}</li>
+            </ul>
           </div>
+
         ))}
       </nav>
     </div>
