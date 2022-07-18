@@ -49,7 +49,7 @@ function NavigationBar() {
               <a className="nav-link hovertext" data-hover="View your balance here" href="balance">Balance</a>
             </li> */}
             <li className="nav-item">
-              <a className="nav-link hovertext" data-hover="All user data is here"  href="data">AllData</a>
+              <a className="nav-link hovertext" data-hover="All user data is here"  href="data">All Data</a>
             </li>          
           </ul>
         </div>

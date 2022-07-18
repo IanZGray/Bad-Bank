@@ -2,33 +2,26 @@ import { getData } from "./allData";
 import './data.css';
 
 const Data = () => {
-    let users = getData();
+  let users = getData();
 
-    return (
-        <div style={{ display: "flex" }}>
-      <nav
-        style={{
-          borderRight: "solid 1px",
-          padding: "1rem",
-        }}
-      >
+  return (
+    <div className="data-column">
+      <nav >
+        <h2>ALL DATA</h2>
+
         {users.map((data) => (
-          <div className='list-group list-group-flush'>
-            <h1 classNam="list-group-item">{data.name}</h1>
-            <h2 classNam="list-group-item">{data.password}</h2>
-            <h3 classNam="list-group-item">${data.balance}</h3>
 
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">{data.name}</li>
-              <li class="list-group-item">{data.password}</li>
-              <li class="list-group-item">${data.balance}</li>
-            </ul>
-          </div>
+          <ul class="list-group list-group-flush dataDisplay">
+            <li class="list-group-item data-color">{data.name}</li>
+            <li class="list-group-item data-color">{data.email}</li>
+            <li class="list-group-item data-color">{data.password}</li>
+            <li class="list-group-item data-color">${data.balance}</li>
+          </ul>
 
         ))}
       </nav>
     </div>
-    )
+  )
 }
 
 export default Data;

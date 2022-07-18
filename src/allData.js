@@ -1,27 +1,32 @@
 let data = [
     {
         name: "John_Snow",
-        password: "winterIsComing",
+        email: "WorstEnding@hbo.com",
+        password: "winterIsC0ming!",
         balance: 102800.50,
     },
     {
         name: "Spider_Man",
-        password: "mySpiderSenseIsTingling",
+        email: "PParker@DailyBugle.com",
+        password: "?!mySpid3rSenseIsTingling",
         balance: 40.52,
     },
     {
         name: "Hulk",
-        password: "SMA$H",
+        email: "DBanner@TheCulverInstitute.com",
+        password: "SMA$H!!!111",
         balance: 80060.03,
     },
     {
         name: "Bruce_Wayne",
-        password: "iAmVengance",
+        email: "darkKnight@batsignal.com",
+        password: "1AmVeng@nce",
         balance: 9999999999.99,
     },
     {
         name: "Winnie_the_Pooh",
-        password: "honeyFund",
+        email: "winnie@thepooh.com",
+        password: "#h0neyFund",
         balance: 32.76,
     },
   ];
