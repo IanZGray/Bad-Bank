@@ -1,0 +1,12 @@
+.card {
+    max-width: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 2rem;
+    background-color: rgb(205, 244, 245);
+}
+
+.card-body {
+    text-align: center;
+}

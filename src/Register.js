@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Login from "./Login";
 import './register.css';
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
@@ -66,14 +65,14 @@ const Register = () => {
     return (
         <>
             {success ? (
-                <section className="registersection">
+                <section>
                     <h1>Account Created</h1>
                     <p>
                         <a href="login">Sign In</a>
                     </p>
                 </section>
             ) : (
-                <section className="registersection">
+                <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Register</h1>
                     <form onSubmit= {handleSubmit}>
