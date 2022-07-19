@@ -1,13 +1,16 @@
 import { getData } from "./allData";
+import Card from "./Context";
 import './data.css';
 
 const Data = () => {
   let users = getData();
 
   return (
-    <div className="data-column">
+    <Card 
+    header="All Data"
+    body={(
+    <div>
       <nav >
-        <h2>ALL DATA</h2>
 
         {users.map((data) => (
 
@@ -21,6 +24,8 @@ const Data = () => {
         ))}
       </nav>
     </div>
+    )}
+    />
   )
 }
 

@@ -2,19 +2,22 @@ import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './register.css';
+import Card from "./Context";
 
 const Login = () => {
 
     return (
-        <>
-                <div class="card" >
+        <Card
+            // bgcolor="primary"
+                header="Log In"
+                body = {(
+                <div >
                     <div class="card-body">
                         <section>
-                            
-                            <h1>Register</h1>
+
                             <form >
                                 <label >
-                                    username:
+                                    Username:
                                 </label>
                                 <input 
                                     typ="text"
@@ -34,7 +37,7 @@ const Login = () => {
 
         {/* email section */}
                                 <label >
-                                    email:
+                                    Email:
                                     <span >
                                         <FontAwesomeIcon icon={faCheck} />
                                     </span>
@@ -91,7 +94,8 @@ const Login = () => {
                         </section>
                     </div>
                 </div>
-        </>
+            )}
+        />
     )
 }
 

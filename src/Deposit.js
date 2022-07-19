@@ -1,9 +1,27 @@
+import { useState } from 'react';
+import Card from './Context';
+import './index.css';
+import "./deposit.css";
+// 
+// [balance, useBalance] = Context;
+
 const Deposit = () => {
+    // [balance, useBalance] = useState(0);
 
     return (
-        <main>
-            <h1>Deposit</h1>
+        <main className="pages">
+            <Card
+                className=""
+                // bgcolor="primary"
+                header="Deposit"
+                body={(
+                    <div>
+                        hello
+                    </div>
+                )}
+            />
         </main>
+        // <h1>{balance}</h1>
     )
 }
 

@@ -4,7 +4,6 @@ const CreateAccount = () => {
 
     return (
         <main className="pages">
-            <h1>Create Account</h1>
             <Register />
         </main>
     )
