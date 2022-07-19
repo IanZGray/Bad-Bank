@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from './Context';
+import Card from './Card';
 import './index.css';
 import "./deposit.css";
 

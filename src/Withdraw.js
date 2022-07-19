@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from './Context';
+import Card from './Card';
 import './index.css';
 import "./withdraw.css";
 
@@ -37,7 +37,7 @@ const Withdraw = () => {
     return (
         <main className="pages">
             <Card
-                className=""
+                // className=""
                 // bgcolor="primary"
                 header="Withdraw"
                 body={(

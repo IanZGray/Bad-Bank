@@ -2,13 +2,16 @@ import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './register.css';
-import Card from "./Context";
+import Card from "./Card";
+import { useBankContext } from "./Context";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9-_](?=.*[@])(?=.*[.]).{6,99}$/;
 
 const Register = () => {
+    const { bank, addUser } = useBankContext();
+
     const userRef = useRef();
     const errRef = useRef();
 
@@ -62,6 +65,13 @@ const Register = () => {
         setErrMsg('');
     }, [user, pwd, matchPwd])
 
+    let newUser = {
+        name: {user},
+        email: {email},
+        password: {pwd},
+        balance: 0
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -72,6 +82,14 @@ const Register = () => {
             setErrMsg("Invalid Entry");
             return;
         }
+
+        console.log(`new user is ${newUser}`);
+        console.log(newUser);
+        console.log(`bank is ${bank}`);
+        addUser(newUser);
+        let views = JSON.stringify(bank);
+        console.log(views);
+        // addUser(newUser);
         console.log(user.at, pwd);
         setSuccess(true);
     }
@@ -82,7 +100,7 @@ const Register = () => {
                 header="Create Account"
                 body={success ? (
                     <div >
-                        <div class="card-body">
+                        <div className="card-body">
                             <section>
                                 <h2>Account Created</h2>
                                 <p>
@@ -96,7 +114,7 @@ const Register = () => {
                     </div>
                 ) : (
                     <div >
-                        <div class="card-body">
+                        <div className="card-body">
                             <section>
                                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                                 <form onSubmit= {handleSubmit}>
@@ -150,7 +168,7 @@ const Register = () => {
                                         onFocus={() => setEmailFocus(true)}
                                         onBlur={() => setEmailFocus(false)}
                                     />
-                                    <p id="emailnote" className={emailFocus && !validEmail ? "instructions" : "offscreen"}>
+                                    <p id="emailnote" className={emailFocus && !validEmail || userFocus && user.length>0 ? "instructions" : "offscreen"}>
                                         <FontAwesomeIcon icon={faInfoCircle} />
                                         Must be valid email address<br />
                                     </p>

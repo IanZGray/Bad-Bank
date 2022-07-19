@@ -1,27 +1,67 @@
-import React, { useState } from 'react';
-import './context.css';
+import React, { useState, createContext, useContext } from 'react';
 
+const BankContext = createContext();
 
-const UserContext = React.createContext(null);
+export const useBankContext = () => useContext(BankContext);
 
+export const BankProvider = ({ children }) => {
+    const [bank, setBank] = useState({
+        loggedInUser:null,
+        users: [
+            {
+                name: "John_Snow",
+                email: "WorstEnding@hbo.com",
+                password: "winterIsC0ming!",
+                balance: 102800.50,
+            },
+            {
+                name: "Spider_Man",
+                email: "PParker@DailyBugle.com",
+                password: "?!mySpid3rSenseIsTingling",
+                balance: 40.52,
+            },
+            {
+                name: "Hulk",
+                email: "DBanner@TheCulverInstitute.com",
+                password: "SMA$H!!!111",
+                balance: 80060.03,
+            },
+            {
+                name: "Bruce_Wayne",
+                email: "darkKnight@batsignal.com",
+                password: "1AmVeng@nce",
+                balance: 9999999999.99,
+            },
+            {
+                name: "Winnie_the_Pooh",
+                email: "winnie@thepooh.com",
+                password: "#h0neyFund",
+                balance: 32.76,
+            }
+        ]
+    });
 
-function Card(props){
-    function classes(){
-      const bg  = props.bgcolor ? ' bg-' + props.bgcolor : ' ';
-      const txt = props.txtcolor ? ' text-' + props.txtcolor: ' text-black';
-      return 'card mb-3 ' + bg + txt;
+    const setLoggedInUser = (username) => {
+        setBank({
+            ...bank,
+            loggedInUser: username,
+        });
     }
-  
+
+    const addUser = (user) => {
+        setBank({
+            ...bank,
+            users: [...bank.users, user]
+        });
+    }
+
     return (
-      <div className={classes()} style={{minWidth: "18rem"}}>
-        <div className="card-header">{props.header}</div>
-        <div className="card-body">
-          {props.title && (<h5 className="card-title">{props.title}</h5>)}
-          {props.text && (<p className="card-text">{props.text}</p>)}
-          {props.body}
-          {props.status && (<div id='createStatus'>{props.status}</div>)}
-        </div>
-      </div>      
-    );    
-  }
-  export default Card
+        <BankContext.Provider value={{
+            bank,
+            addUser,
+            setLoggedInUser,
+        }}>
+            {children}
+        </BankContext.Provider>
+    );
+}

@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './register.css';
-import Card from "./Context";
+import Card from "./Card";
 
 const Login = () => {
 
@@ -12,7 +12,7 @@ const Login = () => {
                 header="Log In"
                 body = {(
                 <div >
-                    <div class="card-body">
+                    <div className="card-body">
                         <section>
 
                             <form >
@@ -81,13 +81,13 @@ const Login = () => {
                                 </p>
 
 
-                                <button disabled="true">
+                                <button disabled={true}>
                                     Login
                                 </button>
                             </form>
                             <p>
                                 Not a member yet?<br />
-                                <span className="line">
+                                <span NameName="line">
                                     <a href="createAccount">Create Account</a>
                                 </span>
                             </p>

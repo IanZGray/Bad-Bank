@@ -1,6 +1,6 @@
 // import { Card } from "react-bootstrap";
 import image from "./bank.png";
-import Card from "./Context";
+import Card from "./Card";
 import './home.css';
 import './index.css';
 
