@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import Card from './Context';
 import './index.css';
 import "./deposit.css";
-import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
-// 
-// [balance, useBalance] = Context;
 
 const Deposit = () => {
     const [balance, setBalance] = useState(0);
-    const [deposited, setDeposited] = useState(10);
+    const [deposited, setDeposited] = useState(0);
 
     const handleInput = event => {
         setDeposited(event.target.value);
@@ -23,7 +20,7 @@ const Deposit = () => {
         let newBalance = parseInt(balance) + parseInt(deposited);
         setBalance(parseInt(newBalance));
         console.log(balance);
-        alert(`Deposit of ${deposited} Recieved!`);
+        alert(`Deposit of $${deposited}.00 Recieved!`);
     }
 
     return (
