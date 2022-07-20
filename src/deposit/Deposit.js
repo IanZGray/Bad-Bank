@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import Card from './Card';
-import './index.css';
+import { useState } from 'react';
+import Card from '../context/Card';
+import '../index.css';
 import "./deposit.css";
+import { useBankContext } from '../context/Context';
+
+// import { data } from 'jquery';
 
 const Deposit = () => {
-    const [balance, setBalance] = useState(0);
+    const [newBalance, setNewBalance] = useState(0);
     const [deposited, setDeposited] = useState(0);
+
+    // const { bank } = useBankContext();
+    // let items = bank.users;
 
     const handleInput = event => {
         setDeposited(event.target.value);
@@ -15,11 +21,22 @@ const Deposit = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log(`this should be ${balance} + ${deposited}`);
+        console.log(`this should be ${newBalance} + ${deposited}`);
 
-        let newBalance = parseInt(balance) + parseInt(deposited);
-        setBalance(parseInt(newBalance));
-        console.log(balance);
+        let total = parseInt(newBalance) + parseInt(deposited);
+        setNewBalance(parseInt(total));
+        console.log(newBalance);
+
+        // items.map((data) => (
+
+        //     if(bank.loggedInUser === data.name){
+        //         data.balance = total
+        //     }
+
+        //     return users
+  
+        //   ))
+        
         alert(`Deposit of $${deposited}.00 Recieved!`);
     }
 
@@ -31,7 +48,7 @@ const Deposit = () => {
                 header="Deposit"
                 body={(
                     <div>
-                        Balance: ${balance}
+                        Balance: ${newBalance}
 
                         <form onSubmit= {handleSubmit}>
                             <input 

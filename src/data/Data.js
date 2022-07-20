@@ -1,6 +1,6 @@
 // import { getData } from "./allData";
-import Card from "./Card";
-import { useBankContext } from "./Context";
+import Card from "../context/Card";
+import { useBankContext } from "../context/Context";
 import './data.css';
 
 const Data = () => {

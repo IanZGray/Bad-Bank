@@ -1,5 +1,5 @@
 import Register from "./Register";
-import "./index.css";
+import "../index.css";
 const CreateAccount = () => {
 
     return (

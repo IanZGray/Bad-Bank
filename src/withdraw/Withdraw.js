@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Card from './Card';
-import './index.css';
+import Card from '../context/Card';
+import '../index.css';
 import "./withdraw.css";
 
 const Withdraw = () => {
