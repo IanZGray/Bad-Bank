@@ -66,9 +66,9 @@ const Register = () => {
     }, [user, pwd, matchPwd])
 
     let newUser = {
-        name: {user},
-        email: {email},
-        password: {pwd},
+        name: user,
+        email: email,
+        password: pwd,
         balance: 0
     }
 
@@ -168,7 +168,7 @@ const Register = () => {
                                         onFocus={() => setEmailFocus(true)}
                                         onBlur={() => setEmailFocus(false)}
                                     />
-                                    <p id="emailnote" className={emailFocus && !validEmail || userFocus && user.length>0 ? "instructions" : "offscreen"}>
+                                    <p id="emailnote" className={emailFocus && !validEmail || userFocus && user.length>0 || pwdFocus && pwd.length>0 ? "instructions" : "offscreen"}>
                                         <FontAwesomeIcon icon={faInfoCircle} />
                                         Must be valid email address<br />
                                     </p>

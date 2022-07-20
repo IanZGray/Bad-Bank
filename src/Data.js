@@ -8,7 +8,7 @@ const Data = () => {
   // useBankContext
   const { bank } = useBankContext();
   let items = bank.users;
-
+console.log(items)
   return (
     <Card 
     header="All Data"
