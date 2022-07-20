@@ -15,6 +15,7 @@ console.log(items)
     body={(
     <div>
       <nav >
+        <h3>Current User: {bank.loggedInUser}</h3>
 
         {items.map((data) => (
 

@@ -37,7 +37,7 @@ function NavigationBar() {
               <Link className="nav-link hovertext" data-hover="Create your account here" to="createAccount">Create Account</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link hovertext" data-hover="Log in here" to="login">Login</Link>
+              <Link className="nav-link hovertext" data-hover="Log in here" to="login">Log In</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link hovertext" data-hover="Make a deposit here" to="deposit">Deposit</Link>
