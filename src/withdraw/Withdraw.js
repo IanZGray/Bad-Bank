@@ -1,62 +1,60 @@
-import React, { useState } from 'react';
-import Card from '../context/Card';
+import { useState, React } from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Card, Button } from "react-bootstrap";
+import {Link} from "react-router-dom";
 import '../index.css';
 import "./withdraw.css";
+import { useBankContext } from '../context/Context';
 
 const Withdraw = () => {
-    const [balance, setBalance] = useState(1000);
-    const [withdrawn, setWithdrawn] = useState(0);
-    const [validWithdraw, setValidWithdraw] = useState(false);
-
+    const { bank, loggedUser } = useBankContext();
+    const [withdrawal, setWithdrawal] = useState(0);
+    const [loggedBalance, setLoggedBalance] = useState(loggedUser.balance);
+    
+    const user = bank.users.find(user => user.name === loggedUser.name);
 
     const handleInput = event => {
-        setWithdrawn(event.target.value);
-        console.log(withdrawn);
-        if (withdrawn>=0){
-            setValidWithdraw(true);
-        } else {setValidWithdraw(false)}
+        setWithdrawal(event.target.value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        let currentBalance = parseInt(user.balance)
+        let addedFunds = parseInt(withdrawal)
+        let newBalance = currentBalance - addedFunds
 
-        console.log(`this should be ${balance} - ${withdrawn}`);
-
-        let newBalance = parseInt(balance) - parseInt(withdrawn);
-
-        if (newBalance <0) {
-            alert(`INSUFFICIENT FUNDS!`);
-            return
-        }
-
-        setBalance(parseInt(newBalance));
-        console.log(balance);
-        alert(`Withdrawn $${withdrawn}.00 from account.`);
+        user.balance = newBalance
+        setLoggedBalance(user.balance)
     }
 
     return (
         <main className="pages">
-            <Card
-                // className=""
-                // bgcolor="primary"
-                header="Withdraw"
-                body={(
-                    <div>
-                        Balance: ${balance}
-
-                        <form onSubmit= {handleSubmit}>
-                            <input 
-                            type="number"
-                            min='0'
-                            name="dollars"
-                            placeholder="0"
-                            onChange={handleInput}
+            <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                    {bank.loggedInUser ? (
+                        <>
+                            <Card.Title>Withdraw</Card.Title>
+                            <Card.Text>Hello, {user.name}!</Card.Text>
+                            <Card.Text>Balance ${loggedBalance}</Card.Text>
+                            <input
+                                type="number"
+                                min='0'
+                                name="dollars"
+                                placeholder="0"
+                                onChange={handleInput}
                             ></input>
-                            <button disabled={!validWithdraw ? true : false}>Withdraw</button>
-                        </form>
+                            <Button variant="primary" onClick={handleSubmit}>Withdraw</Button>
+                        </>
+                ) : (
+                    <div >
+                        <Card.Title>You Must Log In To Make A Withdrawal!</Card.Title>
+                        <Link to="/login"><Button variant="primary">Log In</Button></Link><br />
+                        <br /><p> Don't have an account yet? </p>
+                        <Link to="/createAccount"><Button variant="primary">Create Account</Button></Link>
                     </div>
                 )}
-            />
+                  </Card.Body>
+            </Card>
         </main>
     )
 }

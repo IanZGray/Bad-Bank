@@ -1,100 +1,58 @@
 import { useState, React } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
-// import Card from '../context/Card';
+import {Link} from "react-router-dom";
 import '../index.css';
 import "./deposit.css";
 import { useBankContext } from '../context/Context';
-// import { data } from 'jquery';
 
 const Deposit = () => {
-    const { bank } = useBankContext();
+    const { bank, loggedUser } = useBankContext();
     const [deposited, setDeposited] = useState(0);
-    const [logged, setLogged] = useState(false);
-    const [userSelected, setUserSelected] = useState({})
+    const [loggedBalance, setLoggedBalance] = useState(loggedUser.balance);
 
-    let currentUser = bank.loggedInUser
-    console.log(bank)
-    console.log(currentUser)
-    const storedUsers = bank.users;
-    const filteredNames = storedUsers.map((person) => {
-        return person.name
-    });
+    const user = bank.users.find(user => user.name === loggedUser.name);
 
     const handleInput = event => {
         setDeposited(event.target.value);
     }
 
-    // const selectUser = () => {
-    //     userSelected = bank.users.filter(checkUser);
-    // }
-    // const checkUser = () => {
-    //     return bank.users.name === bank.loggedInUser;
-    // }
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        updateUser();
-        if (userSelected.name === bank.loggedInUser) {
-            setLogged(true);
-        }
-        switch(logged) {
-            case false:
-                alert(`Please Log In`)
-                break;
-            case true:
-                console.log(userSelected.balance);
-                console.log(deposited);
-                console.log(bank.loggedInUser);
-                console.log(userSelected.balance + deposited);
+        let currentBalance = parseInt(user.balance)
+        let addedFunds = parseInt(deposited)
+        let newBalance = currentBalance + addedFunds
 
-                setUserSelected.balance = userSelected.balance + deposited
-                alert(`You have deposited $${deposited}.00 into your account.`)
-        }
+        user.balance = newBalance
+        setLoggedBalance(user.balance)
     }
-
-    const updateUser = async (e) => {
-        for (let i=0; i <= filteredNames.length; i++){
-            if (storedUsers[i].name === bank.loggedInUser) {
-                setUserSelected(storedUsers[i]);
-            }
-        };
-    }
-        // console.log(bank.loggedInUser);
-    
-    const testBank = async (e) => {
-        e.preventDefault();
-        currentUser.balance = currentUser.balance + deposited
-    }
-
-        // items.map((data) => (
-
-        //     if(bank.loggedInUser === data.name){
-        //         data.balance = total
-        //     }
-
-        //     return users
-  
-        //   ))
-        
-   
-
 
     return (
         <main className="pages">
             <Card style={{ width: "18rem" }}>
                 <Card.Body>
-                    <Card.Title>Deposit</Card.Title>
-                    <Card.Text>Hello, {currentUser}!</Card.Text>
-                    <Card.Text>Balance ${userSelected.balance}</Card.Text>
-                        <input 
-                        type="number"
-                        min='0'
-                        name="dollars"
-                        placeholder="0"
-                        onChange={handleInput}
-                        ></input>
-                        <Button variant="primary" onClick={handleSubmit}>Deposit</Button>
+                    {bank.loggedInUser ? (
+                        <>
+                            <Card.Title>Deposit</Card.Title>
+                            <Card.Text>Hello, {user.name}!</Card.Text>
+                            <Card.Text>Balance ${loggedBalance}</Card.Text>
+                            <input
+                                type="number"
+                                min='0'
+                                name="dollars"
+                                placeholder="0"
+                                onChange={handleInput}
+                            ></input>
+                            <Button variant="primary" onClick={handleSubmit}>Deposit</Button>
+                        </>
+                ) : (
+                    <div >
+                        <Card.Title>You Must Log In To Make A Deposit!</Card.Title>
+                        <Link to="/login"><Button variant="primary">Log In</Button></Link><br />
+                        <br /><p> Don't have an account yet? </p>
+                        <Link to="/createAccount"><Button variant="primary">Create Account</Button></Link>
+                    </div>
+                )}
                   </Card.Body>
             </Card>
         </main>

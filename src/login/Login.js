@@ -21,45 +21,8 @@ const Login = () => {
     const [success, setSuccess] = useState(false);
 
 
-    const { bank, setLoggedInUser } = useBankContext();
-    // const storedUsers = bank.users;
-
-    // const filteredNames = storedUsers.map((person) => {
-    //     return person.name
-    // });
-
-    // const filteredPwd = storedUsers.map((person) => {
-    //     return person.password
-    // });
-
-    // const filteredEmail = storedUsers.map((person) => {
-    //     return person.email
-    // });
-
-    // filtering through usernames to see if theres a match
-    // let currentUser = null
-
-    // const checkUser = async (e) => {
-    //     e.preventDefault();
-    //     for (let i=0; i <= storedUsers.length; i++){
-    //     if (storedUsers[i].name === userName) {
-    //         currentUser = storedUsers[i]
-    //         setLoggedInUser(currentUser.name);
-    //         // console.log(bank.loggedInUser)
-    //         // console.log(bank);
-    //         // console.log(userName);
-    //         return currentUser;
-    //     }
-    //     };
-    // }
-
-    // const testBank = async (e) =>
-    // {
-    //     e.preventDefault();
-    //     currentUser.balance = currentUser.balance - 100
-    //     console.log(bank);
-    //     console.log(userName);
-    // }
+    const { bank, setLoggedInUser, setActiveUser } = useBankContext();
+    
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -78,6 +41,7 @@ const Login = () => {
             return;
         }
         setLoggedInUser(userName);
+        setActiveUser(userName);
         setSuccess(true);
         console.log(bank);
         console.log(userName);
