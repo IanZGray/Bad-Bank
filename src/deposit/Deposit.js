@@ -25,6 +25,7 @@ const Deposit = () => {
 
         user.balance = newBalance
         setLoggedBalance(user.balance)
+        alert(`Your deposit of $${addedFunds}.00 has been recieved.`)
     }
 
     return (

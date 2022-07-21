@@ -5,14 +5,15 @@ import './navigationbar.css';
 function NavigationBar() {
 
   // useState to adjust this? useEffect?
-  const currentLocation = window.location.href;
-  const menuItem = document.querySelectorAll('nav-link');
-  const menuLength = menuItem.length
-  for (let i = 0; i<menuLength; i++){
-    if(menuItem[i].href === currentLocation){
-      menuItem[i].className = "active"
-    }
-  }
+  // const currentLocation = window.location.href;
+  // const menuItem = document.querySelectorAll('nav-link');
+  // const menuLength = menuItem.length
+  // for (let i = 0; i<menuLength; i++){
+  //   if(menuItem[i].href === currentLocation){
+  //     menuItem[i].className = "active"
+  //   }
+  // }
+  
   
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-info">
@@ -31,7 +32,7 @@ function NavigationBar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
           <li className="nav-item">
-              <Link className="nav-link hovertext" data-hover="Home page link" to="home">Home</Link>
+              <Link className="nav-link hovertext active" data-hover="Home page link" to="home">Home</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link hovertext" data-hover="Create your account here" to="createAccount">Create Account</Link>

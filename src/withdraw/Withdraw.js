@@ -20,11 +20,12 @@ const Withdraw = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let currentBalance = parseInt(user.balance)
-        let addedFunds = parseInt(withdrawal)
-        let newBalance = currentBalance - addedFunds
+        let removedFunds = parseInt(withdrawal)
+        let newBalance = currentBalance - removedFunds
 
         user.balance = newBalance
         setLoggedBalance(user.balance)
+        alert(`Your withdrawal of $${removedFunds}.00 has been processed.`)
     }
 
     return (

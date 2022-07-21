@@ -26,10 +26,6 @@
     visibility: visible;
 }
 
-.nav-item:active {
-    background:rgb(50, 217, 61) !important;
+.navbar-dark .nav-item > .nav-link.active  {
+    color:white;
 }
-
-/* .nav-link.active {
-background-color: black;
-} */
