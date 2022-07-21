@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {Link} from "react-router-dom";
 import './register.css';
-// import Card from "../context/Card";
 import { useBankContext } from "../context/Context";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
@@ -42,22 +42,22 @@ const Register = () => {
 
     useEffect(() => {
         const result = USER_REGEX.test(user);
-        console.log(result);
-        console.log(user);
+        // console.log(result);
+        // console.log(user);
         setValidName(result);
     }, [user])
 
     useEffect(() => {
         const result = EMAIL_REGEX.test(email);
-        console.log(result);
-        console.log(email);
+        // console.log(result);
+        // console.log(email);
         setValidEmail(result);
     }, [email])
 
     useEffect(() => {
         const result = PWD_REGEX.test(pwd);
-        console.log(result);
-        console.log(pwd);
+        // console.log(result);
+        // console.log(pwd);
         setValidPwd(result);
         const match = pwd === matchPwd;
         setValidMatch(match);
@@ -85,15 +85,23 @@ const Register = () => {
             return;
         }
 
-        console.log(`new user is ${newUser}`);
-        console.log(newUser);
-        console.log(`bank is ${bank}`);
+        // console.log(`new user is ${newUser}`);
+        // console.log(newUser);
+        // console.log(`bank is ${bank}`);
         addUser(newUser);
         let views = JSON.stringify(bank);
-        console.log(views);
-        // addUser(newUser);
-        console.log(user.at, pwd);
+        // console.log(views);
+        // console.log(user.at, pwd);
         setSuccess(true);
+    }
+
+    const resetForm = () => {
+        setPwd('');
+        setUser('');
+        setEmail('');
+        setMatchPwd('');
+        setSuccess(false);
+        console.log(bank);
     }
 
     return (
@@ -102,8 +110,8 @@ const Register = () => {
                 {success ? (
                     <div >
                         <Card.Title>Account Created!</Card.Title>
-                        <Button href="login" variant="primary">Sign In</Button><br/>
-                        <Button href="createAccount" variant="primary">Add Another Account</Button>
+                        <Link to='/login'><Button>Sign In</Button></Link><br/>
+                        <Button onClick={resetForm} variant="primary">Add Another Account</Button>
                     </div>
                 ) : (
                     <div >
@@ -219,7 +227,7 @@ const Register = () => {
                                     <p>
                                         Already Registered?<br />
                                         <span className="line">
-                                            <a href="login">Sign In</a>
+                                            <Link to='/login'>Sign In</Link>
                                         </span>
                                     </p>
                                 </section>

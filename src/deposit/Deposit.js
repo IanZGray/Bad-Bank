@@ -13,7 +13,9 @@ const Deposit = () => {
     const [logged, setLogged] = useState(false);
     const [userSelected, setUserSelected] = useState({})
 
-    let currentUser=''
+    let currentUser = bank.loggedInUser
+    console.log(bank)
+    console.log(currentUser)
     const storedUsers = bank.users;
     const filteredNames = storedUsers.map((person) => {
         return person.name
@@ -83,7 +85,7 @@ const Deposit = () => {
             <Card style={{ width: "18rem" }}>
                 <Card.Body>
                     <Card.Title>Deposit</Card.Title>
-                    <Card.Text>Hello, {bank.loggedInUser}!</Card.Text>
+                    <Card.Text>Hello, {currentUser}!</Card.Text>
                     <Card.Text>Balance ${userSelected.balance}</Card.Text>
                         <input 
                         type="number"
