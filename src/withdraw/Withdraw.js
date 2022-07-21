@@ -22,10 +22,15 @@ const Withdraw = () => {
         let currentBalance = parseInt(user.balance)
         let removedFunds = parseInt(withdrawal)
         let newBalance = currentBalance - removedFunds
-
-        user.balance = newBalance
-        setLoggedBalance(user.balance)
-        alert(`Your withdrawal of $${removedFunds}.00 has been processed.`)
+        if (Number.isInteger(removedFunds) && removedFunds > 0){
+            user.balance = newBalance
+            setLoggedBalance(user.balance)
+            alert(`Your withdrawal of $${removedFunds}.00 has been processed.`)
+        } else if (Number.isInteger(removedFunds) && removedFunds < 0) {
+            alert (`YOU CANNOT WITHDRAW A NEGATIVE, VALUE`)
+        } else if (!Number.isInteger(removedFunds)) {
+            alert (`YOU MUST INPUT A NUMBER!`)
+        }
     }
 
     return (
@@ -38,13 +43,11 @@ const Withdraw = () => {
                             <Card.Text>Hello, {user.name}!</Card.Text>
                             <Card.Text>Balance ${loggedBalance}</Card.Text>
                             <input
-                                type="number"
-                                min='0'
                                 name="dollars"
                                 placeholder="0"
                                 onChange={handleInput}
                             ></input>
-                            <Button variant="primary" onClick={handleSubmit}>Withdraw</Button>
+                            <Button disabled={!withdrawal ? true : false} variant="primary" onClick={handleSubmit}>Withdraw</Button>
                         </>
                 ) : (
                     <div >

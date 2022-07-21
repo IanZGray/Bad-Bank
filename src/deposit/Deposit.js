@@ -8,7 +8,7 @@ import { useBankContext } from '../context/Context';
 
 const Deposit = () => {
     const { bank, loggedUser } = useBankContext();
-    const [deposited, setDeposited] = useState(0);
+    const [deposited, setDeposited] = useState();
     const [loggedBalance, setLoggedBalance] = useState(loggedUser.balance);
 
     const user = bank.users.find(user => user.name === loggedUser.name);
@@ -22,10 +22,16 @@ const Deposit = () => {
         let currentBalance = parseInt(user.balance)
         let addedFunds = parseInt(deposited)
         let newBalance = currentBalance + addedFunds
+        if (Number.isInteger(addedFunds) && addedFunds > 0){
+            user.balance = newBalance
+            setLoggedBalance(user.balance)
+            alert(`Your deposit of $${addedFunds}.00 has been recieved.`)
+        } else if (Number.isInteger(addedFunds) && addedFunds < 0) {
+            alert (`YOU CANNOT DEPOSIT A NEGATIVE, VALUE`)
+        } else if (!Number.isInteger(addedFunds)) {
+            alert (`YOU MUST INPUT A NUMBER!`)
+        }
 
-        user.balance = newBalance
-        setLoggedBalance(user.balance)
-        alert(`Your deposit of $${addedFunds}.00 has been recieved.`)
     }
 
     return (
@@ -38,13 +44,11 @@ const Deposit = () => {
                             <Card.Text>Hello, {user.name}!</Card.Text>
                             <Card.Text>Balance ${loggedBalance}</Card.Text>
                             <input
-                                type="number"
-                                min='0'
                                 name="dollars"
                                 placeholder="0"
                                 onChange={handleInput}
                             ></input>
-                            <Button variant="primary" onClick={handleSubmit}>Deposit</Button>
+                            <Button  disabled={!deposited ? true : false} variant="primary" onClick={handleSubmit}>Deposit</Button>
                         </>
                 ) : (
                     <div >
