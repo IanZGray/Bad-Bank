@@ -62,7 +62,7 @@ const Register = () => {
         name: user,
         email: email,
         password: pwd,
-        balance: 0
+        balance: 0.00
     }
 
     const handleSubmit = async (e) => {

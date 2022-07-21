@@ -19,16 +19,16 @@ const Withdraw = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let currentBalance = parseInt(user.balance)
-        let removedFunds = parseInt(withdrawal)
+        let currentBalance = parseFloat(user.balance)
+        let removedFunds = parseFloat(withdrawal)
         let newBalance = currentBalance - removedFunds
-        if (Number.isInteger(removedFunds) && removedFunds > 0){
+        if (Number(removedFunds) && removedFunds > 0){
             user.balance = newBalance
             setLoggedBalance(user.balance)
-            alert(`Your withdrawal of $${removedFunds}.00 has been processed.`)
-        } else if (Number.isInteger(removedFunds) && removedFunds < 0) {
+            alert(`Your withdrawal of $${removedFunds} has been processed.`)
+        } else if (Number(removedFunds) && removedFunds < 0) {
             alert (`YOU CANNOT WITHDRAW A NEGATIVE, VALUE`)
-        } else if (!Number.isInteger(removedFunds)) {
+        } else if (!Number(removedFunds) && removedFunds != 0) {
             alert (`YOU MUST INPUT A NUMBER!`)
         }
     }

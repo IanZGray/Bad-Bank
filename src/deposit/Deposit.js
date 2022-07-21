@@ -19,16 +19,16 @@ const Deposit = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let currentBalance = parseInt(user.balance)
-        let addedFunds = parseInt(deposited)
+        let currentBalance = parseFloat(user.balance)
+        let addedFunds = parseFloat(deposited)
         let newBalance = currentBalance + addedFunds
-        if (Number.isInteger(addedFunds) && addedFunds > 0){
+        if (Number(addedFunds) && addedFunds > 0){
             user.balance = newBalance
             setLoggedBalance(user.balance)
-            alert(`Your deposit of $${addedFunds}.00 has been recieved.`)
-        } else if (Number.isInteger(addedFunds) && addedFunds < 0) {
+            alert(`Your deposit of $${addedFunds} has been recieved.`)
+        } else if (Number(addedFunds) && addedFunds < 0) {
             alert (`YOU CANNOT DEPOSIT A NEGATIVE, VALUE`)
-        } else if (!Number.isInteger(addedFunds)) {
+        } else if (!Number(addedFunds) && addedFunds != 0) {
             alert (`YOU MUST INPUT A NUMBER!`)
         }
 
@@ -48,7 +48,7 @@ const Deposit = () => {
                                 placeholder="0"
                                 onChange={handleInput}
                             ></input>
-                            <Button  disabled={!deposited ? true : false} variant="primary" onClick={handleSubmit}>Deposit</Button>
+                            <Button disabled={!deposited ? true : false} variant="primary" onClick={handleSubmit}>Deposit</Button>
                         </>
                 ) : (
                     <div >
