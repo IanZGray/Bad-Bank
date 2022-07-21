@@ -1,25 +1,21 @@
-// import { Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import image from "../bank.png";
-import Card from "../context/Card";
 import './home.css';
 import '../index.css';
 
-// import './app.css'
 const Home = () => {
-    
     return (
-      <main className="pages">
-        <Card
-        header="Home"
-        body={(
-            <div className="card-body">
-            <img className="card-img-top" src={ image } alt="Card image cap" />
-              <h5 className="card-title">Bad Bank</h5>
-              <p className="card-text">For all your banking needs.</p>
-            </div>
-        )}
-        />
-      </main>
+      <Card style={{ width: "18rem" }}>
+      <Card.Body>
+        <Card.Title>Home</Card.Title>
+            <Card.Img
+            variant="top"
+            src={ image } alt="Card image cap"
+            />
+              <Card.Title>Bad Bank</Card.Title>
+              <Card.Text>For all your banking needs.</Card.Text>
+      </Card.Body>
+    </Card>
     )
 }
 
