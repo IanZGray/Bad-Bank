@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import './createAccount.css';
 import { useBankContext } from "../context/Context";
 
