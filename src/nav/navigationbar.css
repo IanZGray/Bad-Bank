@@ -25,7 +25,6 @@
     opacity: 1;
     visibility: visible;
 }
-
-.navbar-dark .nav-item > .nav-link.active  {
-    color:white;
+.nav-link:active {
+    color: rgb(3, 179, 179) !important;
 }
