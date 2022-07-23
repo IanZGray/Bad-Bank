@@ -43,8 +43,6 @@ const Login = () => {
         setLoggedInUser(userName);
         setActiveUser(userName);
         setSuccess(true);
-        console.log(bank);
-        console.log(userName);
     }
 
     const logOut = async (e) => {

@@ -5,7 +5,6 @@ import './data.css';
 const Data = () => {
   const { bank } = useBankContext();
   let items = bank.users;
-console.log(items)
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Body>
