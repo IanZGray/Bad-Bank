@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 import {Link} from "react-router-dom";
 import '../index.css';
-import "./withdraw.css";
 import { useBankContext } from '../context/Context';
 
 const Withdraw = () => {

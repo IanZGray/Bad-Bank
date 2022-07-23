@@ -21,7 +21,7 @@ function NavigationBar() {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
         <li id="home" className="nav-item">
-            <Link data-toggle="pill" className="nav-link hovertext active" data-hover="Home page link" to="home">Home</Link>
+            <Link data-toggle="pill" className="nav-link hovertext" data-hover="Home page link" to="home">Home</Link>
           </li>
           <li id="createAccount" className="nav-item">
             <Link data-toggle="pill" className="nav-link hovertext" data-hover="Create your account here" to="createAccount">Create Account</Link>

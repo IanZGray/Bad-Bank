@@ -25,7 +25,7 @@ root.render(
       <Route exact path='/' element={<App/>} >
         <Route index element ={<Home/>} />
         <Route path="home" element ={<Home/>} />
-        <Route path="login" element={<Login/>} />
+        <Route path="login" element ={<Login/>} />
         <Route path="createAccount" element ={<CreateAccount/>} />
         <Route path="deposit" element ={<Deposit/>} />
         <Route path="withdraw" element ={<Withdraw/>} />

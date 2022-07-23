@@ -27,3 +27,6 @@ body {
     background-color: rgb(140, 154, 194);
 }
 
+.card-body {
+    text-align: center;
+}

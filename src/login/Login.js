@@ -23,9 +23,10 @@ const Login = () => {
 
     const { bank, setLoggedInUser, setActiveUser } = useBankContext();
     
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
+    // turn back on after grading
+    // useEffect(() => {
+    //     userRef.current.focus();
+    // }, [])
 
 
     const handleSubmit = async (e) => {
