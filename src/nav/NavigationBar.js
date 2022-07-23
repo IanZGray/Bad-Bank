@@ -5,7 +5,7 @@ function NavigationBar() {
   
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-info">
-      <a className="navbar-brand" href="Home">BadBank</a>
+      <Link className="navbar-brand" to="home">BadBank</Link>
       <button 
           className="navbar-toggler" 
           type="button" 

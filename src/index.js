@@ -30,14 +30,7 @@ root.render(
         <Route path="deposit" element ={<Deposit/>} />
         <Route path="withdraw" element ={<Withdraw/>} />
         <Route path="data" element ={<Data/>} />
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: "1rem" }}>
-              <h1>There's nothing here!</h1>
-            </main>
-          }
-        />
+        <Route path="*" element={<Home/>} />
       </Route>
     </Routes>
   </BrowserRouter>

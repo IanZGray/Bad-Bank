@@ -21,10 +21,12 @@ const Withdraw = () => {
         let currentBalance = parseFloat(user.balance)
         let removedFunds = parseFloat(withdrawal)
         let newBalance = currentBalance - removedFunds
-        if (Number(removedFunds) && removedFunds > 0){
+        if (Number(removedFunds) && removedFunds > 0 && newBalance >= 0){
             user.balance = newBalance
             setLoggedBalance(user.balance)
             alert(`Your withdrawal of $${removedFunds} has been processed.`)
+        } else if (Number(removedFunds) && newBalance < 0) {
+            alert (`INSUFFICIENT FUNDS!`)
         } else if (Number(removedFunds) && removedFunds < 0) {
             alert (`YOU CANNOT WITHDRAW A NEGATIVE, VALUE`)
         } else if (!Number(removedFunds) && removedFunds != 0) {
