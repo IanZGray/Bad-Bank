@@ -8,7 +8,7 @@ const Data = () => {
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Body>
-      <Card.Title>ALL DATA!</Card.Title>
+      <Card.Title className="main-header">ALL DATA!</Card.Title>
       <Card.Text>Current User: {bank.loggedInUser}</Card.Text>
       {items.map((data) => (
         <ul className="list-group list-group-flush dataDisplay">

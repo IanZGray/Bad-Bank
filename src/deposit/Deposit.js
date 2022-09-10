@@ -39,7 +39,7 @@ const Deposit = () => {
                 <Card.Body>
                     {bank.loggedInUser ? (
                         <>
-                            <Card.Title>Deposit</Card.Title>
+                            <Card.Title className="main-header">Deposit</Card.Title>
                             <Card.Text>Hello, {user.name}!</Card.Text>
                             <Card.Text>Balance ${loggedBalance}</Card.Text>
                             <input
@@ -51,7 +51,7 @@ const Deposit = () => {
                         </>
                 ) : (
                     <div >
-                        <Card.Title>You Must Log In To Make A Deposit!</Card.Title>
+                        <Card.Title className="secondary-header">You Must Log In To Make A Deposit!</Card.Title>
                         <Link to="/login"><Button variant="primary">Log In</Button></Link><br />
                         <br /><p> Don't have an account yet? </p>
                         <Link to="/createAccount"><Button variant="primary">Create Account</Button></Link>

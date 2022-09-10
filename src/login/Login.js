@@ -59,16 +59,16 @@ const Login = () => {
             <Card.Body>
                 {success ? (
                     <div >
-                        <Card.Title>You Are Logged In!</Card.Title>
+                        <Card.Title className="secondary-header">You Are Logged In!</Card.Title>
                         {/* have this button set success to false and set username and pwd to '' */}
                         <Button variant="primary" onClick={logOut}>Log Out</Button><br/>
                         <Link to="/deposit"><Button variant="primary">Make a Deposit</Button></Link>
                     </div>
                 ) : (
                     <div >
-                            <Card.Title>Log In</Card.Title>
+                            <Card.Title className="main-header">Log In</Card.Title>
                             <div className="card-body">
-                                <section>
+                                <section className='card-background'>
                                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                                         <label htmlFor="username">
                                             Username:

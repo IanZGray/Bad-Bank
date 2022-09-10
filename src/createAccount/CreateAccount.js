@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import './createAccount.css';
 import { useBankContext } from "../context/Context";
 
+import '../app.css';
+
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[A-Z0-9-_%+-]+@[A-Z0-9._]+\.[A-Z]{2,}$/i;
@@ -94,15 +96,15 @@ const Register = () => {
             <Card.Body>
                 {success ? (
                     <div >
-                        <Card.Title>Account Created!</Card.Title>
+                        <Card.Title className="main-header">Account Created!</Card.Title>
                         <Link to='/login'><Button>Sign In</Button></Link><br/>
                         <Button onClick={resetForm} variant="primary">Add Another Account</Button>
                     </div>
                 ) : (
                     <div >
-                        <Card.Title>Create Account</Card.Title>
+                        <Card.Title className="main-header">Create Account</Card.Title>
                             <div className="card-body">
-                                <section>
+                                <section className='card-background'>
                                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                                         <label htmlFor="username">
                                             Username:

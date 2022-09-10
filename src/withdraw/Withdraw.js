@@ -40,7 +40,7 @@ const Withdraw = () => {
                 <Card.Body>
                     {bank.loggedInUser ? (
                         <>
-                            <Card.Title>Withdraw</Card.Title>
+                            <Card.Title className="main-header">Withdraw</Card.Title>
                             <Card.Text>Hello, {user.name}!</Card.Text>
                             <Card.Text>Balance ${loggedBalance}</Card.Text>
                             <input
@@ -52,7 +52,7 @@ const Withdraw = () => {
                         </>
                 ) : (
                     <div >
-                        <Card.Title>You Must Log In To Make A Withdrawal!</Card.Title>
+                        <Card.Title className="secondary-header">You Must Log In To Make A Withdrawal!</Card.Title>
                         <Link to="/login"><Button variant="primary">Log In</Button></Link><br />
                         <br /><p> Don't have an account yet? </p>
                         <Link to="/createAccount"><Button variant="primary">Create Account</Button></Link>

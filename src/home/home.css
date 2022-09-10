@@ -4,5 +4,20 @@
     flex-direction: column;
     align-self: center;
     margin-top: 2rem;
-    background-color: rgb(205, 244, 245);
+    background-color: rgb(211, 211, 211);
+    /* font-family: 'BIZ UDPMincho', serif; */
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Playfair Display SC', serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    box-shadow: 10px 10px 15px 10px rgba(0,0,0,.8);
+    border-style: inset;
+    border-width: 15px;
+    border-color: rgba(228, 228, 228, 0.5);
+}
+.home-logo {
+    margin-top: -15%;
+}
+.home-header {
+    font-size: 3vw;
+    font-weight: bold;
 }
