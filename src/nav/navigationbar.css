@@ -2,20 +2,22 @@
     position: relative;
 }
 .bg-info{
-    background-color: rgba(0,0,0,.4) !important;
+    background-color: rgba(0,0,0,0) !important;
 }
 .hovertext {
-    color: rgba(228, 228, 228, 1) !important;
+    color: rgb(0, 0, 0) !important;
 }
 .hovertext:hover {
     color: red;
 }
 .navbar-brand {
-    color:rgb(202, 202, 82) !important;
+    /* color:rgb(202, 202, 82) !important;
     background: -webkit-linear-gradient(45deg,rgb(245, 245, 219),rgb(153, 155, 22),rgb(215, 218, 50),rgb(245, 245, 219),rgb(181, 184, 53)) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
-  -webkit-text-stroke: .5pt rgba(0,0,0,.2);
+  -webkit-text-stroke: .5pt rgba(0,0,0,.2); */
+  color: black;
+  font-weight: bolder;
 }
   
 .hovertext:before {
@@ -23,17 +25,19 @@
     visibility: hidden;
     opacity: 0;
     width: 7rem;
-    background-color: rgba(228, 228, 228, 0.8);
+    background-color: rgba(228, 228, 228, 1);
     color: black;
     text-align: center;
     border-radius: .3rem;
     padding: .2rem .2rem;
-    transition: opacity .8s ease-in-out;
+    transition: opacity .4s ease-in-out;
+
+    font-size: .6em;
   
     position: absolute;
     z-index: 1;
     left: 0;
-    top: 110%;
+    top: 100%;
 }
   
 .hovertext:hover:before {
