@@ -66,7 +66,7 @@ const Login = () => {
                     </div>
                 ) : (
                     <div >
-                            <Card.Title className="main-header">Log In</Card.Title>
+                            {/* <Card.Title className="main-header">Log In</Card.Title> */}
                             <div className="card-body">
                                 <section className='card-background'>
                                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>

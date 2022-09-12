@@ -39,7 +39,7 @@ const Deposit = () => {
                 <Card.Body>
                     {bank.loggedInUser ? (
                         <>
-                            <Card.Title className="main-header">Deposit</Card.Title>
+                            {/* <Card.Title className="main-header">Deposit</Card.Title> */}
                             <Card.Text>Hello, {user.name}!</Card.Text>
                             <Card.Text>Balance ${loggedBalance}</Card.Text>
                             <input

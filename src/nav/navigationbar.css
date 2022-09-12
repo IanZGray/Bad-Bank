@@ -4,6 +4,9 @@
 .bg-info{
     background-color: rgba(0,0,0,0) !important;
 }
+.btn{
+    width: 70%;
+}
 .hovertext {
     color: rgb(0, 0, 0) !important;
     font-size: .7em;
