@@ -19,3 +19,7 @@ h1 {
 .data-color {
     background-color: rgba(236, 221, 156, 0.1);
 }
+.list-group-item {
+    font-size: .5em;
+    text-align: left;
+}

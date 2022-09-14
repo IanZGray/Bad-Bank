@@ -10,11 +10,11 @@ const Home = () => {
       <Card style={{ width: "18rem" }}>
       <Card.Body>
         {/* <Card.Title className='home-header'>Home</Card.Title> */}
-            <Card.Img
+            {/* <Card.Img
             className="home-logo"
             variant="top"
             src={ image3 } alt="Card image cap"
-            />
+            /> */}
               <Card.Title className="home-header">Bad Bank</Card.Title>
               <Card.Text>For all your banking needs.</Card.Text>
       </Card.Body>
