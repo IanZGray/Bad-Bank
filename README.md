@@ -11,7 +11,9 @@ I built this to demonstrate the use of react hooks in a front end application. I
 
 # Screenshots: 
 
+<div style="width:90px; height:60px">
 ![Bad Bank Screen Shot](/repository/public/badBankSS.png?raw=true "Bad Bank Screen Shot")
+<div>
 
 # Technology used: 
 
